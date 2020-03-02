@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    RED.nodes.registerType('amberdata-blocklet',{
+        category: 'Blockchainfirst',
+        color: '#00cea5',
+        defaults: {
+            name: { value: "" }
+        },
+        inputs:1,
+        outputs:1,
+        icon: "logo.png",
+        label: function() {
+            return this.name || "Blocklet";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="amberdata-blocklet">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="amberdata-blocklet">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
