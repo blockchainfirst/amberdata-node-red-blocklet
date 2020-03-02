@@ -3,13 +3,31 @@
         category: 'Blockchainfirst',
         color: '#00cea5',
         defaults: {
-            name: { value: "" }
+            name   : { value:"" },
+            // address: { value:"", required: true },
+            apikey : { value:"", required: true },
+            network: { value:"", required: true },
+            address: {
+                value: "",
+                required: true,
+                validate: function (v) {
+                    console.log('validate: ', v)
+                    //return ['encode', 'decode', 'escape', 'unescape'].includes(v)
+                    return true;
+                },
+            },
         },
         inputs:1,
         outputs:1,
         icon: "logo.png",
         label: function() {
-            return this.name || "Blocklet";
+            return this.name || "Amberdata Blocklet";
+        },
+        oneditprepare: function() {
+        },
+        oneditsave: function() {
+        },
+        oneditcancel: function(adding) {
         }
     });
 </script>
@@ -22,5 +40,24 @@
 </script>
 
 <script type="text/html" data-help-name="amberdata-blocklet">
-    <p>A simple node that converts the message payloads into all lower-case characters</p>
+    <p>A node that listen to transactions events from a Blockchain</p>   
+    <h3>Inputs</h3>
+    <dl class="message-properties">
+      <dt>Wazo call <span class="property-type">object</span></dt>
+      <dd>Received a Wazo call object</dd>
+    </dl>
+    <h3>Outputs</h3>
+    <dl class="message-properties">
+      <dt>Wazo call <span class="property-type">object</span></dt>
+      <dd>Received an Answer object</dd>
+    </dl>
+    <h3>Details</h3>
+    The answer action answer a call.
+    <h3>References</h3>
+    <ul>
+      <li><a href="https://wazo-platform.org">Wazo documentation</a></li>
+      <li>
+        <p>Powered by <a href="https://blockchainfirst.org/" target="_blank">Blockchainfirst</a>.</p>    
+      </li>
+    </ul>
 </script>
