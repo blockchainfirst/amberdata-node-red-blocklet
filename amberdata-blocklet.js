@@ -7,5 +7,5 @@ module.exports = function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("Amberdata", AmberdataBlockletNode);
+    RED.nodes.registerType("amberdata-blocklet", AmberdataBlockletNode);
 }
