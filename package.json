@@ -30,6 +30,6 @@
   },
   "homepage": "https://github.com/blockchainfirst/amberdata-node-red-blocklet.git#readme",
   "dependencies": {
-    "ws": "^7.2.1"
+    "ws": "^7.4.6"
   }
 }
